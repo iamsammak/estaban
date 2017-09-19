@@ -15,6 +15,6 @@
   },
 
   "chrome_url_overrides": {
-    "newtab": "banana.html"
+    "newtab": "main.html"
   }
 }

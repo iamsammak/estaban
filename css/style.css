@@ -18,12 +18,18 @@
   background: linear-gradient(to bottom, #57c1eb 0%,#246fa8 100%);
  }
 
- .elements {
-   display: flex;
-   justify-content: center;
-   flex-wrap: wrap;
+.elements {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
- }
+.st1 {
+  fill: none;
+  stroke: #FFFFFF;
+  strokeWidth: 2;
+  strokeMiterlimit: 10;
+}
 
 .white {fill:#FFFFFF}
 .gray {fill:#E0E0E0}
