@@ -18,7 +18,7 @@ class Weather extends React.Component {
   render() {
 
     return(
-      <div className="container">
+      <div className="weather container">
         <div className="elements">
           {cloudy}
           {rainy}

@@ -1,13 +1,11 @@
 import React from 'react';
 
-import Weather from './weather';
-import Clock from './clock';
+import California from './california';
 
-const Root = ({ store }) => {
+const Root = () => {
   return(
     <div>
-      <Clock />
-      <Weather />
+      <California />
     </div>
   );
 };
