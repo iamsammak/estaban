@@ -8,7 +8,7 @@ class Clock extends React.Component {
     super(props);
     this.state = {
       california: moment().tz('America/Los_Angeles').format('LTS'),
-      indiana: moment().tz('America/New_York').format('LTS')
+      indiana: moment().tz('America/Indiana/Indianapolis').format('LTS')
     };
     this.tick = this.tick.bind(this);
     this.getAnalogRotation = this.getAnalogRotation.bind(this);
@@ -34,7 +34,10 @@ class Clock extends React.Component {
       minutes = moment().tz('America/Los_Angeles').format('mm');
       hours = moment().tz('America/Los_Angeles').format('h');
     } else if (this.props.location === "indiana") {
-
+      currentTime = this.state.indiana;
+      seconds = moment().tz('America/Indiana/Indianapolis').format('ss');
+      minutes = moment().tz('America/Indiana/Indianapolis').format('mm');
+      hours = moment().tz('America/Indiana/Indianapolis').format('h');
     }
 
     if (hours === "12") {
@@ -55,14 +58,14 @@ class Clock extends React.Component {
   tick() {
     this.setState({
       california: moment().tz('America/Los_Angeles').format('LTS'),
-      indiana: moment().tz('America/New_York').format('LTS')
+      indiana: moment().tz('America/Indiana/Indianapolis').format('LTS')
     });
     let rotationDegrees = this.getAnalogRotation();
-    let second = document.getElementById("second");
+    let second = document.getElementById(`second-${this.props.location}`);
     second.style.transform = `rotate(${rotationDegrees[2]}deg)`
-    let minute = document.getElementById("minute");
+    let minute = document.getElementById(`minute-${this.props.location}`);
     minute.style.transform = `rotate(${rotationDegrees[1]}deg)`
-    let hour = document.getElementById("hour");
+    let hour = document.getElementById(`hour-${this.props.location}`);
     hour.style.transform = `rotate(${rotationDegrees[0] + 90}deg)`
   }
 
@@ -74,6 +77,10 @@ class Clock extends React.Component {
       digitalDisplay = this.state.indiana;
     }
 
+    let hourID = `hour-${this.props.location}`;
+    let minuteID = `minute-${this.props.location}`;
+    let secondID = `second-${this.props.location}`;
+
     return (
       <div className="clock">
         <div className="digital-clock">
@@ -83,9 +90,9 @@ class Clock extends React.Component {
         </div>
         <div className="analog-circle">
           <div className="analog-face">
-            <div id="hour" className="analog-hour"></div>
-            <div id="minute" className="analog-minute"></div>
-            <div id="second" className="analog-second"></div>
+            <div id={hourID} className="analog-hour"></div>
+            <div id={minuteID} className="analog-minute"></div>
+            <div id={secondID} className="analog-second"></div>
           </div>
         </div>
       </div>

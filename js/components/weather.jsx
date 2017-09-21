@@ -15,6 +15,21 @@ class Weather extends React.Component {
     };
   }
 
+  componentDidMount() {
+    // let watchID = navigator.geolocation.watchPosition(
+    //   function(location) {
+    //     console.log(location);
+    //   }
+    // );
+    this.setState({ watchID: watchID });
+  }
+
+  componentWillUnmount() {
+    // navigator.geolocation.clearWatch(this.state.watchID);
+  }
+
+
+
   render() {
 
     return(
