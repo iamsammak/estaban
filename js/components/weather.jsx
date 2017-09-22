@@ -21,7 +21,7 @@ class Weather extends React.Component {
     //     console.log(location);
     //   }
     // );
-    this.setState({ watchID: watchID });
+    // this.setState({ watchID: watchID });
   }
 
   componentWillUnmount() {
