@@ -1,53 +1,23 @@
-const MonthInDays = {
-  1: 31,
-  2: 59,
-  3: 90,
-  4: 120,
-  5: 151,
-  6: 181,
-  7: 212,
-  8: 243,
-  9: 273,
-  10: 304,
-  11: 334,
-  12: 365
-};
+// Converts JS Date Object into Date String
+export const getDateString = function(dateObj) {
+  let year = dateObj.getFullYear();
+  let month = dateObj.getMonth();
+  let day = dateObj.getDate();
 
-const MonthInDaysLeap = {
-  1: 31,
-  2: 60,
-  3: 91,
-  4: 121,
-  5: 152,
-  6: 182,
-  7: 213,
-  8: 244,
-  9: 274,
-  10: 305,
-  11: 335,
-  12: 366
-};
+  month = (month < 10) ? `0${month}` : month;
+  day = (day < 10) ? `0${day}` : day;
 
-const LeapYears = [
-  2004, 2008, 2012,
-  2016, 2020, 2024
-];
+  return year + '-' + month + '-' + day;
+}
 
-export const calcDaysBetween = function(targetDate, currentDate) {
-  let currentYear = currentDate.getFullYear();
-  let currentMonth = currentDate.getMonth() + 1; //get month(0-11)
-  let currentDay = currentDate.getDate();
+// This works
+function parseDate(str) {
+    var mdy = str.split('/');
+    return new Date(mdy[2], mdy[0]-1, mdy[1]);
+}
 
-  let targetYear = targetDate[0];
-  let targetMonth = targetDate[1];
-  let targetDay = targetDate[2];
+function daydiff(first, second) {
+    return Math.round((second-first)/(1000*60*60*24));
+}
 
-  let yearInDays = 365;
-
-  let retYear = (targetYear - currentYear) * yearInDays;
-  let retMonth = MonthInDays[targetMonth] - MonthInDays[currentMonth];
-  let retDay = targetDay - currentDay;
-
-  return retYear + retMonth + retDay;
-};
-// +1 if leap year
+// console.log(daydiff(parseDate($('#first').val()), parseDate($('#second').val())));

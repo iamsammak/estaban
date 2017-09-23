@@ -25,7 +25,6 @@ class Clock extends React.Component {
     this.intervalId.clearInterval();
   }
 
-
   getAnalogRotation() {
     let currentTime, hours, minutes, seconds = "";
     if (this.props.location === "california") {
@@ -70,13 +69,20 @@ class Clock extends React.Component {
   }
 
   render() {
-    let digitalDisplay = "";
+    // digital clock
+    let timezone = '';
     if (this.props.location === "california") {
-      digitalDisplay = this.state.california;
+      timezone = 'America/Los_Angeles';
     } else if (this.props.location === "indiana") {
-      digitalDisplay = this.state.indiana;
+      timezone = 'America/Indiana/Indianapolis';
     }
 
+    let hours = moment().tz(timezone).hour();
+    hours = (hours < 10) ? `0${hours}` : hours;
+    let minutes = moment().tz(timezone).minute();
+    minutes = (minutes < 10) ? `0${minutes}` : minutes;
+
+    // analog clock
     let hourID = `hour-${this.props.location}`;
     let minuteID = `minute-${this.props.location}`;
     let secondID = `second-${this.props.location}`;
@@ -84,9 +90,8 @@ class Clock extends React.Component {
     return (
       <div className="clock">
         <div className="digital-clock">
-          <p>
-            <span>{digitalDisplay}</span>
-          </p>
+          <span className="digital-hour">{hours}</span>
+          <span className="digital-minute">{minutes}</span>
         </div>
         <div className="analog-circle">
           <div className="analog-face">

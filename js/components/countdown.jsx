@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 
-import { calcDaysBetween } from './countdown-util';
+import { getDateString } from './countdown-util';
 
 class Countdown extends React.Component {
   constructor(props) {
@@ -9,7 +9,7 @@ class Countdown extends React.Component {
     this.state = {
       title: "Next Naptime",
       number: 69,
-      targetDate: [2017, 10, 13]
+      targetDate: "2017-10-13"
     };
     this.updateDays = this.updateDays.bind(this);
   }
@@ -18,12 +18,10 @@ class Countdown extends React.Component {
     this.updateDays();
   }
 
-  // write logic to reupdate once midnight passes
-  // maybe Task Scheduler
-
   updateDays() {
-    let currentDate = new Date;
-    let daysLeft = calcDaysBetween(this.state.targetDate, currentDate);
+    let current = moment().format("YYYY-MM-DD");
+    let target = moment(this.state.targetDate);
+    let daysLeft = target.diff(current, "days")
     this.setState({ number: daysLeft })
   }
 
