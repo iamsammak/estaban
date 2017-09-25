@@ -1,7 +1,8 @@
 /* Weather */
 .weather-container {
   width: 20vw; /*TODO change later */
-  background: linear-gradient(to bottom, #57c1eb 0%,#246fa8 100%);
+  background: linear-gradient(to bottom, #FFE5F9 0%,#98C5FF 100%);
+  // background: linear-gradient(to bottom, #57c1eb 0%,#246fa8 100%);
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -48,19 +49,20 @@
   }
   .current-temp {
     font-size: 25px;
+    margin-right: 1vw;
   }
 }
 
 .today-container {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
 }
 
 .forecast-list {
   width: 100%;
-  margin-top: 10px;
+  margin-top: 16px;
 }
 
 .forecast-item {

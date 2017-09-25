@@ -70,17 +70,23 @@ class Clock extends React.Component {
 
   render() {
     // digital clock
-    let timezone = '';
+    let momentObj = '';
+    let location = "";
     if (this.props.location === "california") {
-      timezone = 'America/Los_Angeles';
+      momentObj = moment().tz('America/Los_Angeles');
+      location = "fremont, ca";
     } else if (this.props.location === "indiana") {
-      timezone = 'America/Indiana/Indianapolis';
+      momentObj = moment().tz('America/Indiana/Indianapolis');
+      location = "mishiwaka, in";
     }
 
-    let hours = moment().tz(timezone).hour();
+    let hours = momentObj.hour();
     hours = (hours < 10) ? `0${hours}` : hours;
-    let minutes = moment().tz(timezone).minute();
+    let minutes = momentObj.minute();
     minutes = (minutes < 10) ? `0${minutes}` : minutes;
+
+    // date and location
+    let date = momentObj.format("MMM Do");
 
     // analog clock
     let hourID = `hour-${this.props.location}`;
@@ -89,16 +95,24 @@ class Clock extends React.Component {
 
     return (
       <div className="clock">
-        <div>{this.props.location}</div>
-        <div className="digital-clock">
-          <span className="digital-hour">{hours}</span>
-          <span className="digital-minute">{minutes}</span>
+        <div className="digital-container">
+          <div className="digial-clock">
+            <div className="digital-hour">{hours}</div>
+            <div className="digital-minute">{minutes}</div>
+          </div>
+          <hr />
+          <div className="location-container">
+            <div>{date}</div>
+            <div>{location}</div>
+          </div>
         </div>
-        <div className="analog-circle">
-          <div className="analog-face">
-            <div id={hourID} className="analog-hour"></div>
-            <div id={minuteID} className="analog-minute"></div>
-            <div id={secondID} className="analog-second"></div>
+        <div className="analog-container">
+          <div className="analog-circle">
+            <div className="analog-face">
+              <div id={hourID} className="analog-hour"></div>
+              <div id={minuteID} className="analog-minute"></div>
+              <div id={secondID} className="analog-second"></div>
+            </div>
           </div>
         </div>
       </div>

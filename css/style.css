@@ -14,7 +14,8 @@
   width: 20vw;
   font-family: "Roboto Mono";
   text-align: center;
-  position: relative; }
+  position: relative;
+  background: linear-gradient(to bottom, #FFE5F9 0%, #98C5FF 100%); }
 
 .countdown-title {
   font-size: 18px;
@@ -40,30 +41,53 @@
   width: 20vw;
   /*TODO change later */
   position: relative;
-  background: linear-gradient(to bottom, #FFE5F9 0%, #98C5FF 100%); }
-
-.digital-clock {
-  font-family: "Roboto Mono";
-  font-size: 18px;
-  position: absolute;
-  top: 15%;
+  background: linear-gradient(to bottom, #FFE5F9 0%, #98C5FF 100%);
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center; }
 
-.digital-hour {
-  font-size: 45px;
-  font-weight: 400; }
+.digital-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
 
-.digital-minute {
-  font-size: 45px;
-  font-weight: 300; }
+.digial-clock {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; }
+  .digial-clock .digital-hour {
+    font-size: 60px;
+    font-weight: 400; }
+  .digial-clock .digital-minute {
+    font-size: 30px;
+    font-weight: 300; }
+
+hr {
+  width: 60%;
+  border: 0;
+  border-top: 1px solid black;
+  margin: 1em auto; }
+
+.location-container {
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.analog-container {
+  position: relative;
+  width: 18vw;
+  height: 18vw; }
 
 .analog-circle {
-  width: 180px;
-  height: 180px;
+  width: calc(18vw - 16px);
+  height: calc(18vw - 16px);
   margin: 0 auto;
   position: absolute;
-  top: 50%;
   border: 8px solid #fff;
   border-radius: 50%;
   box-shadow: 0 1px 8px rgba(34, 34, 34, 0.3), inset 0 1px 8px rgba(34, 34, 34, 0.3); }
@@ -123,7 +147,7 @@
 .weather-container {
   width: 20vw;
   /*TODO change later */
-  background: linear-gradient(to bottom, #57c1eb 0%, #246fa8 100%);
+  background: linear-gradient(to bottom, #FFE5F9 0%, #98C5FF 100%);
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -165,17 +189,18 @@
     font-size: 30px;
     margin: 5px 0px 0px 14px; }
   .weather-today .current-temp {
-    font-size: 25px; }
+    font-size: 25px;
+    margin-right: 1vw; }
 
 .today-container {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center; }
 
 .forecast-list {
   width: 100%;
-  margin-top: 10px; }
+  margin-top: 16px; }
 
 .forecast-item {
   display: flex;

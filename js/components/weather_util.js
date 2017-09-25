@@ -17,5 +17,12 @@ export const DayInWords = {
   3: "Wednesday",
   4: "Thursday",
   5: "Friday",
-  6: "Saturday"
+  6: "Saturday",
+  7: "Sun",
+  8: "Mon",
+  9: "Tues",
+  10: "Wed",
+  11: "Thur",
+  12: "Fri",
+  13: "Sat"
 };

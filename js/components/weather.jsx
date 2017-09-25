@@ -99,7 +99,8 @@ class Weather extends React.Component {
   }
 
   render() {
-    let currentDay = DayInWords[new Date().getDay()];
+    let currentDay = DayInWords[new Date().getDay()].toLowerCase();
+    // let currentDay = DayInWords[new Date().getDay() + 7].toLowerCase();
     let currentTemp = this.state.today.temp + String.fromCharCode(176);
     let todayIcon = CODE_TO_ICON[this.state.today.code];
 
@@ -108,7 +109,7 @@ class Weather extends React.Component {
         return;
       }
       let icon = CODE_TO_ICON[weather.code];
-      let day = weather.day;
+      let day = weather.day.toLowerCase();
       let key = `forecast-${idx}`;
 
       let title = `High: ${weather.high}  Low: ${weather.low}`;
