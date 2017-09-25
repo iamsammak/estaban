@@ -4,7 +4,7 @@ import Weather from './weather';
 import Clock from './clock';
 import Countdown from './countdown';
 
-const California = () => {
+const Estaban = () => {
   return (
     <div className="app">
       <Clock location="california"/>
@@ -16,4 +16,4 @@ const California = () => {
   );
 };
 
-export default California;
+export default Estaban;

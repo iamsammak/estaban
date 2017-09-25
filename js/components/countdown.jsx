@@ -7,7 +7,7 @@ class Countdown extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: "Next Naptime",
+      title: "Next Adventure",
       number: 69,
       targetDate: "2017-10-13"
     };
@@ -34,7 +34,6 @@ class Countdown extends React.Component {
           {this.state.number}
           <span>days</span>
         </div>
-
       </div>
     )
   }

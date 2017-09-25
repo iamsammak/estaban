@@ -9,6 +9,14 @@
   flex-direction: row;
   height: 100vh; }
 
+.countdown-editbutton {
+  position: absolute;
+  bottom: 4%;
+  background-color: transparent;
+  border: none; }
+  .countdown-editbutton:focus {
+    outline: none; }
+
 .countdown-container {
   width: 20vw;
   color: white;
@@ -42,6 +50,10 @@
     padding-bottom: 0.5em; }
   .countdown-number {
     border: none; } }
+
+@media (max-width: 475px) {
+  .countdown-title {
+    font-size: 15px; } }
 
 .clock {
   width: 20vw;
@@ -179,7 +191,7 @@ hr {
   .analog-face:after {
     width: 10px;
     height: 10px;
-    margin: -5px 0 0 -5px; } }
+    margin: -6px 0 0 -5px; } }
 
 @media (max-height: 339px) {
   .analog-container {

@@ -1,5 +1,16 @@
 $main-color: white;
 
+// add a div inside countdown-container
+.countdown-editbutton {
+  position: absolute;
+  bottom: 4%;
+  background-color: transparent;
+  border: none;
+  &:focus {
+    outline: none;
+  }
+}
+
 .countdown-container {
   width: 20vw;
   color: $main-color;
@@ -40,5 +51,11 @@ $main-color: white;
   }
   .countdown-number {
     border: none;
+  }
+}
+
+@media (max-width: 475px) {
+  .countdown-title {
+    font-size: 15px;
   }
 }
