@@ -66,8 +66,10 @@ class Weather extends React.Component {
       woeID: 2407405, //defaults to fremont woeID
       unit: "f",
       today: {},
-      forecast: []
+      forecast: [],
+      currentDay: ""
     };
+    this.setCurrentDay = this.setCurrentDay.bind(this);
   }
 
   componentDidMount() {
@@ -96,10 +98,38 @@ class Weather extends React.Component {
       .catch(err => {
         console.log("error", err);
       });
+
+    this.setCurrentDay();
+  }
+
+  setCurrentDay() {
+    let currentDay = "";
+    if (window.innerWidth < 900) {
+      currentDay = DayInWords[new Date().getDay() + 7].toLowerCase();
+      this.update("currentDay", currentDay);
+    } else {
+      currentDay = DayInWords[new Date().getDay()].toLowerCase();
+      this.update("currentDay", currentDay);
+    }
+  }
+
+  update(field, target){
+    this.setState({[field]: target });
   }
 
   render() {
-    let currentDay = DayInWords[new Date().getDay()].toLowerCase();
+    let currentDay = "";
+    const mq = window.matchMedia("(max-width: 900px)");
+    mq.addListener((mq) => {
+      if (mq.matches) {
+        currentDay = DayInWords[new Date().getDay() + 7].toLowerCase();
+        this.update("currentDay", currentDay);
+      } else {
+        currentDay = DayInWords[new Date().getDay()].toLowerCase();
+        this.update("currentDay", currentDay);
+      }
+    });
+
     // let currentDay = DayInWords[new Date().getDay() + 7].toLowerCase();
     let currentTemp = this.state.today.temp + String.fromCharCode(176);
     let todayIcon = CODE_TO_ICON[this.state.today.code];
@@ -125,7 +155,7 @@ class Weather extends React.Component {
       <div className="weather-container">
         <div className="weather-elements">
           <div className="weather-today">
-            <span className="title">{currentDay}</span>
+            <span className="title">{this.state.currentDay}</span>
             <div className="today-container">
               {todayIcon}
               <span className="current-temp">{currentTemp}</span>

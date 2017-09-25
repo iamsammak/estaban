@@ -91,3 +91,56 @@ $main-color: white;
     width: 27.5px;
   }
 }
+
+@media (max-height: 460px) {
+  .forecast-list {
+    display: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .today-container {
+    .element {
+      height: 35px;
+      width: 35px;
+      margin: 10px;
+    }
+    // svg sizing change
+    .sunny-night {
+      height: 35px;
+      width: 35px;
+    }
+    .sunny-wind {
+      height: 37.5px;
+      width: 37.5px;
+    }
+  }
+  .weather-today {
+    .current-temp {
+      font-size: 20px;
+    }
+  }
+}
+
+@media (max-width: 620px) {
+  .today-container {
+    justify-content: center;
+  }
+  .weather-today {
+    .title {
+    font-size: 25px;
+    }
+    .current-temp {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .weather-today {
+    .title {
+    font-size: 18px;
+    margin: 5px 0px 0px 7px;
+    }
+  }
+}

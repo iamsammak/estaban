@@ -14,27 +14,34 @@
   color: white;
   font-family: "Roboto Mono";
   text-align: center;
-  position: relative;
-  background: linear-gradient(to bottom, #FFE5F9 0%, #98C5FF 100%); }
+  background: linear-gradient(to bottom, #FFE5F9 0%, #98C5FF 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
 
 .countdown-title {
   font-size: 18px;
-  position: absolute;
-  top: 35%;
-  left: calc(50% - 64px); }
+  padding-bottom: 1em; }
 
 .countdown-number {
   border: 2px solid white;
   border-radius: 5px;
   font-size: 36px;
   width: 100px;
-  padding: 20px 10px;
-  margin: auto;
-  position: absolute;
-  top: 45%;
-  left: calc(50% - 60px); }
+  padding: 20px 10px; }
   .countdown-number span {
     font-size: 14px; }
+
+@media (max-width: 660px) {
+  .countdown-number {
+    padding: 5px 0px; } }
+
+@media (max-width: 530px) {
+  .countdown-title {
+    padding-bottom: 0.5em; }
+  .countdown-number {
+    border: none; } }
 
 .clock {
   width: 20vw;
@@ -82,8 +89,8 @@ hr {
   position: relative;
   width: 18vw;
   height: 18vw;
-  max-width: 150px;
-  max-height: 150px; }
+  max-width: 166px;
+  max-height: 166px; }
 
 .analog-circle {
   width: calc(18vw - 16px);
@@ -145,6 +152,38 @@ hr {
   padding: 40% 1px 0;
   background: #fff;
   transform-origin: 50% 100%; }
+
+@media (max-width: 700px) {
+  .location-container {
+    font-size: 13px; } }
+
+@media (max-width: 600px) {
+  .digial-clock .digital-hour {
+    font-size: 50px; }
+  .digial-clock .digital-minute {
+    font-size: 25px; } }
+
+@media (max-width: 550px) {
+  .location-container {
+    font-size: 10px; }
+  .digial-clock .digital-hour {
+    font-size: 30px; }
+  .digial-clock .digital-minute {
+    font-size: 15px; }
+  .analog-circle {
+    border: 3px solid #fff; }
+  .analog-hour {
+    padding: 2px 0 2px 25%; }
+  .analog-minute {
+    padding: 40% 2px 0; }
+  .analog-face:after {
+    width: 10px;
+    height: 10px;
+    margin: -5px 0 0 -5px; } }
+
+@media (max-height: 339px) {
+  .analog-container {
+    display: none; } }
 
 .weather-container {
   color: white;
@@ -222,5 +261,36 @@ hr {
   .forecast-item .sunny-wind {
     height: 27.5px;
     width: 27.5px; }
+
+@media (max-height: 460px) {
+  .forecast-list {
+    display: none; } }
+
+@media (max-width: 700px) {
+  .today-container .element {
+    height: 35px;
+    width: 35px;
+    margin: 10px; }
+  .today-container .sunny-night {
+    height: 35px;
+    width: 35px; }
+  .today-container .sunny-wind {
+    height: 37.5px;
+    width: 37.5px; }
+  .weather-today .current-temp {
+    font-size: 20px; } }
+
+@media (max-width: 620px) {
+  .today-container {
+    justify-content: center; }
+  .weather-today .title {
+    font-size: 25px; }
+  .weather-today .current-temp {
+    display: none; } }
+
+@media (max-width: 500px) {
+  .weather-today .title {
+    font-size: 18px;
+    margin: 5px 0px 0px 7px; } }
 
 /*# sourceMappingURL=style.css.map*/

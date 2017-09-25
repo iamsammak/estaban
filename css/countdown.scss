@@ -5,15 +5,16 @@ $main-color: white;
   color: $main-color;
   font-family: "Roboto Mono";
   text-align: center;
-  position: relative;
   background: linear-gradient(to bottom, #FFE5F9 0%,#98C5FF 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .countdown-title {
   font-size: 18px;
-  position: absolute;
-  top: 35%;
-  left: calc(50% - 64px);
+  padding-bottom: 1em;
 }
 
 .countdown-number {
@@ -22,11 +23,22 @@ $main-color: white;
   font-size: 36px;
   width: 100px;
   padding: 20px 10px;
-  margin: auto;
-  position: absolute;
-  top: 45%;
-  left: calc(50% - 60px);
   span {
     font-size: 14px;
+  }
+}
+
+@media (max-width: 660px) {
+  .countdown-number {
+    padding: 5px 0px;
+  }
+}
+
+@media (max-width: 530px) {
+  .countdown-title {
+    padding-bottom: 0.5em;
+  }
+  .countdown-number {
+    border: none;
   }
 }

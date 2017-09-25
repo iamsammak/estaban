@@ -52,8 +52,8 @@ hr {
   position: relative;
   width: 18vw;
   height: 18vw;
-  max-width: 150px;
-  max-height: 150px;
+  max-width: 166px;
+  max-height: 166px;
 }
 
 .analog-circle {
@@ -122,4 +122,55 @@ hr {
   padding: 40% 1px 0;
   background: #fff;
   transform-origin: 50% 100%;
+}
+
+@media (max-width: 700px) {
+  .location-container {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 600px) {
+  .digial-clock {
+    .digital-hour {
+      font-size: 50px;
+    }
+    .digital-minute {
+      font-size: 25px;
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .location-container {
+    font-size: 10px;
+  }
+  .digial-clock {
+    .digital-hour {
+      font-size: 30px;
+    }
+    .digital-minute {
+      font-size: 15px;
+    }
+  }
+  .analog-circle {
+    border: 3px solid #fff;
+  }
+  .analog-hour {
+    padding: 2px 0 2px 25%;
+  }
+  .analog-minute {
+  padding: 40% 2px 0;
+  }
+  .analog-face:after {
+    width: 10px;
+    height: 10px;
+    margin: -5px 0 0 -5px;
+  }
+}
+
+@media (max-height: 339px) {
+  .analog-container {
+    display: none;
+  }
 }

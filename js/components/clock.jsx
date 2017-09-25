@@ -80,10 +80,8 @@ class Clock extends React.Component {
       location = "mishiwaka, in";
     }
 
-    let hours = momentObj.hour();
-    hours = (hours < 10) ? `0${hours}` : hours;
-    let minutes = momentObj.minute();
-    minutes = (minutes < 10) ? `0${minutes}` : minutes;
+    let hours = momentObj.format("hh");
+    let minutes = momentObj.format("mm");
 
     // date and location
     let date = momentObj.format("MMM Do");
