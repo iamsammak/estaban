@@ -8,9 +8,9 @@ const California = () => {
   return (
     <div className="app">
       <Clock location="california"/>
-      <Weather />
+      <Weather location="fremont"/>
       <Countdown />
-      <Weather />
+      <Weather location="mishiwaka"/>
       <Clock location="indiana" />
     </div>
   );
