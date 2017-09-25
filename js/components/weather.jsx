@@ -121,8 +121,8 @@ class Weather extends React.Component {
     });
 
     return(
-      <div className="weather container">
-        <div className="elements">
+      <div className="weather-container">
+        <div className="weather-elements">
           <div className="weather-today">
             <span className="title">{currentDay}</span>
             <div className="today-container">

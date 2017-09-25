@@ -89,6 +89,7 @@ class Clock extends React.Component {
 
     return (
       <div className="clock">
+        <div>{this.props.location}</div>
         <div className="digital-clock">
           <span className="digital-hour">{hours}</span>
           <span className="digital-minute">{minutes}</span>

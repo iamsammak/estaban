@@ -120,12 +120,10 @@
   transform-origin: 50% 100%; }
 
 /* Weather */
-.weather {
+.weather-container {
   width: 20vw;
   /*TODO change later */
-  background: linear-gradient(to bottom, #57c1eb 0%, #246fa8 100%); }
-
-.container {
+  background: linear-gradient(to bottom, #57c1eb 0%, #246fa8 100%);
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -136,7 +134,8 @@
   width: 50px;
   margin: 10px; }
 
-.elements {
+.weather-elements {
+  width: 80%;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -157,11 +156,16 @@
 .yellow {
   fill: #FFEB3B; }
 
-.weather-today .title {
-  font-size: 36px; }
-
-.weather-today .current-temp {
-  font-size: 25px; }
+.weather-today {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  border-radius: 5px; }
+  .weather-today .title {
+    font-size: 30px;
+    margin: 5px 0px 0px 14px; }
+  .weather-today .current-temp {
+    font-size: 25px; }
 
 .today-container {
   display: flex;
@@ -169,10 +173,14 @@
   justify-content: center;
   align-items: center; }
 
+.forecast-list {
+  width: 100%;
+  margin-top: 10px; }
+
 .forecast-item {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center; }
   .forecast-item .day {
     font-size: 16px; }
