@@ -1,5 +1,7 @@
-/* Weather */
+$main-color: white;
+
 .weather-container {
+  color: $main-color;
   width: 20vw; /*TODO change later */
   background: linear-gradient(to bottom, #FFE5F9 0%,#98C5FF 100%);
   // background: linear-gradient(to bottom, #57c1eb 0%,#246fa8 100%);
@@ -40,7 +42,7 @@
 .weather-today {
   display: flex;
   flex-direction: column;
-  border: 2px solid black;
+  border: 2px solid $main-color;
   border-radius: 5px;
 
   .title {

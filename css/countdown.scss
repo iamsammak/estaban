@@ -1,6 +1,8 @@
-/* Countdown */
+$main-color: white;
+
 .countdown-container {
   width: 20vw;
+  color: $main-color;
   font-family: "Roboto Mono";
   text-align: center;
   position: relative;
@@ -10,19 +12,19 @@
 .countdown-title {
   font-size: 18px;
   position: absolute;
-  top: 30%;
+  top: 35%;
   left: calc(50% - 64px);
 }
 
 .countdown-number {
-  border: 2px solid black;
+  border: 2px solid $main-color;
   border-radius: 5px;
   font-size: 36px;
   width: 100px;
   padding: 20px 10px;
   margin: auto;
   position: absolute;
-  top: 40%;
+  top: 45%;
   left: calc(50% - 60px);
   span {
     font-size: 14px;
