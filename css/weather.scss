@@ -1,10 +1,11 @@
 $main-color: white;
+$background-gradient: linear-gradient(to bottom, #AA1003 0%,#B3C44C 100%);
+// $background-gradient: linear-gradient(to bottom, #FFE5F9 0%,#98C5FF 100%);
 
 .weather-container {
   color: $main-color;
   width: 20vw; /*TODO change later */
-  background: linear-gradient(to bottom, #FFE5F9 0%,#98C5FF 100%);
-  // background: linear-gradient(to bottom, #57c1eb 0%,#246fa8 100%);
+  // background: $background-gradient;
   display: flex;
   justify-content: center;
   flex-direction: column;

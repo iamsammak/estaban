@@ -7,7 +7,8 @@
 .app {
   display: flex;
   flex-direction: row;
-  height: 100vh; }
+  height: 100vh;
+  background: linear-gradient(to bottom, #FFE5F9 0%, #98C5FF 100%); }
 
 .countdown-editbutton {
   position: absolute;
@@ -22,7 +23,6 @@
   color: white;
   font-family: "Roboto Mono";
   text-align: center;
-  background: linear-gradient(to bottom, #FFE5F9 0%, #98C5FF 100%);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -30,36 +30,83 @@
 
 .countdown-title {
   font-size: 18px;
-  padding-bottom: 1em; }
+  padding-bottom: 25px; }
 
-.countdown-number {
-  border: 2px solid white;
-  border-radius: 5px;
-  font-size: 36px;
-  width: 100px;
-  padding: 20px 10px; }
-  .countdown-number span {
-    font-size: 14px; }
+.calendar-container {
+  position: relative;
+  display: block;
+  width: 140px;
+  height: 130px;
+  background: #fff;
+  color: black;
+  text-align: center; }
+  .calendar-container .binds {
+    position: absolute;
+    height: 15px;
+    width: 3px;
+    background: #999;
+    border-radius: 7px;
+    top: -6px; }
+  .calendar-container .bind-1 {
+    left: 12%; }
+  .calendar-container .bind-2 {
+    left: 22%; }
+  .calendar-container .bind-3 {
+    right: 22%; }
+  .calendar-container .bind-4 {
+    right: 12%; }
+  .calendar-container .calendar-top {
+    background: #555;
+    display: block;
+    padding: 8px 0;
+    color: #fff;
+    font-size: 12px;
+    border-bottom: 2px solid #333; }
+  .calendar-container .calendar-number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 65px;
+    height: 96px; }
 
-@media (max-width: 660px) {
-  .countdown-number {
-    padding: 5px 0px; } }
+@media (max-width: 800px) {
+  .calendar-container {
+    width: 130px;
+    height: 120px; }
+    .calendar-container .calendar-number {
+      font-size: 60px;
+      height: 86px; } }
 
-@media (max-width: 530px) {
-  .countdown-title {
-    padding-bottom: 0.5em; }
-  .countdown-number {
-    border: none; } }
+@media (max-width: 756px) {
+  .calendar-container {
+    width: 18vw; }
+    .calendar-container .calendar-number {
+      font-size: 60px; } }
+
+@media (max-width: 600px) {
+  .calendar-container {
+    height: 110px; }
+    .calendar-container .calendar-number {
+      font-size: 55px;
+      height: 76px; } }
 
 @media (max-width: 475px) {
   .countdown-title {
-    font-size: 15px; } }
+    font-size: 15px; }
+  .calendar-container .calendar-number {
+    font-size: 45px; } }
+
+@media (max-height: 461px) {
+  .calendar-container {
+    height: 95px; }
+    .calendar-container .calendar-number {
+      height: 61px;
+      font-size: 40px; } }
 
 .clock {
   width: 20vw;
   /*TODO change later */
   position: relative;
-  background: linear-gradient(to bottom, #FFE5F9 0%, #98C5FF 100%);
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -105,13 +152,14 @@ hr {
   max-height: 166px; }
 
 .analog-circle {
+  background-color: white;
   width: calc(18vw - 16px);
   height: calc(18vw - 16px);
   max-width: 150px;
   max-height: 150px;
   margin: 0 auto;
   position: absolute;
-  border: 8px solid #fff;
+  border: 8px solid #9e8371;
   border-radius: 50%; }
 
 .analog-face {
@@ -125,7 +173,7 @@ hr {
   width: 12px;
   height: 12px;
   margin: -6px 0 0 -6px;
-  background: #fff;
+  background: black;
   border-radius: 6px;
   content: "";
   display: block; }
@@ -138,7 +186,7 @@ hr {
   left: 50%;
   margin: -4px 0 -4px -25%;
   padding: 4px 0 4px 25%;
-  background: #fff;
+  background: black;
   transform-origin: 100% 50%;
   border-radius: 4px 0 0 4px; }
 
@@ -150,7 +198,7 @@ hr {
   left: 50%;
   margin: -40% -3px 0;
   padding: 40% 3px 0;
-  background: #fff;
+  background: black;
   transform-origin: 50% 100%;
   border-radius: 3px 3px 0 0; }
 
@@ -162,7 +210,7 @@ hr {
   left: 50%;
   margin: -40% -1px 0 0;
   padding: 40% 1px 0;
-  background: #fff;
+  background: #df4848;
   transform-origin: 50% 100%; }
 
 @media (max-width: 700px) {
@@ -178,12 +226,14 @@ hr {
 @media (max-width: 550px) {
   .location-container {
     font-size: 10px; }
+    .location-container .location {
+      display: none; }
   .digial-clock .digital-hour {
     font-size: 30px; }
   .digial-clock .digital-minute {
     font-size: 15px; }
   .analog-circle {
-    border: 3px solid #fff; }
+    border: 3px solid #9e8371; }
   .analog-hour {
     padding: 2px 0 2px 25%; }
   .analog-minute {
@@ -201,7 +251,6 @@ hr {
   color: white;
   width: 20vw;
   /*TODO change later */
-  background: linear-gradient(to bottom, #FFE5F9 0%, #98C5FF 100%);
   display: flex;
   justify-content: center;
   flex-direction: column;

@@ -1,4 +1,6 @@
 $main-color: white;
+$background-gradient: linear-gradient(to bottom, #AA1003 0%,#B3C44C 100%);
+// $background-gradient: linear-gradient(to bottom, #FFE5F9 0%,#98C5FF 100%);
 
 // add a div inside countdown-container
 .countdown-editbutton {
@@ -16,7 +18,7 @@ $main-color: white;
   color: $main-color;
   font-family: "Roboto Mono";
   text-align: center;
-  background: linear-gradient(to bottom, #FFE5F9 0%,#98C5FF 100%);
+  // background: $background-gradient;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -25,37 +27,122 @@ $main-color: white;
 
 .countdown-title {
   font-size: 18px;
-  padding-bottom: 1em;
+  padding-bottom: 25px;
 }
 
-.countdown-number {
-  border: 2px solid $main-color;
-  border-radius: 5px;
-  font-size: 36px;
-  width: 100px;
-  padding: 20px 10px;
-  span {
-    font-size: 14px;
+// .in {
+//   padding: 12px 0px 16px 0;
+//   font-size: 14px;
+// }
+
+.calendar-container {
+  position: relative;
+  display: block;
+  width: 140px;
+  height: 130px;
+  background: #fff;
+  color: black;
+  text-align: center;
+
+  .binds {
+    position: absolute;
+    height: 15px;
+    width: 3px;
+    background: #999;
+    border-radius: 7px;
+    top: -6px;
+  }
+
+  .bind-1 {
+    left: 12%;
+  }
+  .bind-2 {
+    left: 22%;
+  }
+  .bind-3 {
+    right: 22%;
+  }
+  .bind-4 {
+    right: 12%;
+  }
+
+  .calendar-top {
+    background: #555;
+    display: block;
+    padding: 8px 0;
+    color: #fff;
+    font-size: 12px;
+    border-bottom: 2px solid #333;
+  }
+
+  .calendar-number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 65px;
+    height: 96px;
   }
 }
 
-@media (max-width: 660px) {
-  .countdown-number {
-    padding: 5px 0px;
+// change container back to countdown-number
+// .countdown-number {
+//   border: 2px solid $main-color;
+//   border-radius: 5px;
+//   font-size: 36px;
+//   width: 100px;
+//   padding: 20px 10px;
+//   span {
+//     font-size: 14px;
+//   }
+// }
+
+@media (max-width: 800px) {
+  .calendar-container {
+    width: 130px;
+    height: 120px;
+    .calendar-number {
+      font-size: 60px;
+      height: 86px
+    }
   }
 }
 
-@media (max-width: 530px) {
-  .countdown-title {
-    padding-bottom: 0.5em;
+@media (max-width: 756px) {
+  .calendar-container {
+    width: 18vw;
+    .calendar-number {
+      font-size: 60px;
+    }
   }
-  .countdown-number {
-    border: none;
+}
+
+@media (max-width: 600px) {
+  .calendar-container {
+    height: 110px;
+    .calendar-number {
+      font-size: 55px;
+      height: 76px;
+    }
   }
 }
 
 @media (max-width: 475px) {
   .countdown-title {
     font-size: 15px;
+  }
+  .calendar-container {
+    .calendar-number {
+      font-size: 45px;
+    }
+  }
+}
+
+@media (max-height: 461px) {
+  .calendar-container {
+    height: 95px;
+    .calendar-number {
+      height: 61px;
+      font-size: 40px;
+    }
   }
 }

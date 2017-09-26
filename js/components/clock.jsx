@@ -77,7 +77,7 @@ class Clock extends React.Component {
       location = "fremont, ca";
     } else if (this.props.location === "indiana") {
       momentObj = moment().tz('America/Indiana/Indianapolis');
-      location = "mishiwaka, in";
+      location = "mishawaka, in";
     }
 
     let hours = momentObj.format("hh");
@@ -100,8 +100,8 @@ class Clock extends React.Component {
           </div>
           <hr />
           <div className="location-container">
-            <div>{date}</div>
-            <div>{location}</div>
+            <div className="clock-date">{date}</div>
+            <div className="location">{location}</div>
           </div>
         </div>
         <div className="analog-container">

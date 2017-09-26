@@ -30,9 +30,15 @@ class Countdown extends React.Component {
     return(
       <div className="countdown-container">
         <div className="countdown-title">{this.state.title}</div>
-        <div className="countdown-number">
-          {this.state.number}
-          <span>days</span>
+        <div className="calendar-container">
+          <span className="bind-1 binds"></span>
+          <span className="bind-2 binds"></span>
+          <span className="bind-3 binds"></span>
+          <span className="bind-4 binds"></span>
+        	<span className="calendar-top">days left</span>
+          <div className="calendar-number">
+            <span>{this.state.number}</span>
+          </div>
         </div>
       </div>
     )
