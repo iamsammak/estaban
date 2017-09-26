@@ -9,7 +9,8 @@ $beige: #f6f3f1;
   // background: $background-gradient;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  // justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   color: $main-color;
 }
@@ -49,6 +50,7 @@ hr {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 5vw;
 }
 
 .analog-container {

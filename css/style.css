@@ -8,7 +8,7 @@
   display: flex;
   flex-direction: row;
   height: 100vh;
-  background: linear-gradient(to bottom, #FFE5F9 0%, #98C5FF 100%); }
+  background: #36C6F7; }
 
 .countdown-editbutton {
   position: absolute;
@@ -39,7 +39,8 @@
   height: 130px;
   background: #fff;
   color: black;
-  text-align: center; }
+  text-align: center;
+  border-radius: 7px; }
   .calendar-container .binds {
     position: absolute;
     height: 15px;
@@ -61,7 +62,8 @@
     padding: 8px 0;
     color: #fff;
     font-size: 12px;
-    border-bottom: 2px solid #333; }
+    border-bottom: 2px solid #333;
+    border-radius: 4px 4px 0 0; }
   .calendar-container .calendar-number {
     display: flex;
     justify-content: center;
@@ -96,6 +98,10 @@
   .calendar-container .calendar-number {
     font-size: 45px; } }
 
+@media (max-width: 430px) {
+  .calendar-container .calendar-top {
+    font-size: 11px; } }
+
 @media (max-height: 461px) {
   .calendar-container {
     height: 95px; }
@@ -103,13 +109,26 @@
       height: 61px;
       font-size: 40px; } }
 
+@media (max-height: 339px) {
+  .countdown-title {
+    display: none; }
+  .calendar-container {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff; }
+    .calendar-container .binds {
+      background: #fff; }
+    .calendar-container .calendar-top {
+      background: transparent;
+      border-bottom: 2px solid #fff; } }
+
 .clock {
   width: 20vw;
   /*TODO change later */
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   color: white; }
 
@@ -142,7 +161,8 @@ hr {
   font-size: 16px;
   display: flex;
   flex-direction: column;
-  align-items: center; }
+  align-items: center;
+  margin-bottom: 5vw; }
 
 .analog-container {
   position: relative;

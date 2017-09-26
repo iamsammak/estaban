@@ -43,6 +43,7 @@ $background-gradient: linear-gradient(to bottom, #AA1003 0%,#B3C44C 100%);
   background: #fff;
   color: black;
   text-align: center;
+  border-radius: 7px;
 
   .binds {
     position: absolute;
@@ -73,6 +74,7 @@ $background-gradient: linear-gradient(to bottom, #AA1003 0%,#B3C44C 100%);
     color: #fff;
     font-size: 12px;
     border-bottom: 2px solid #333;
+    border-radius: 4px 4px 0 0;
   }
 
   .calendar-number {
@@ -137,12 +139,38 @@ $background-gradient: linear-gradient(to bottom, #AA1003 0%,#B3C44C 100%);
   }
 }
 
+@media (max-width: 430px) {
+  .calendar-container {
+    .calendar-top {
+      font-size: 11px;
+    }
+  }
+}
+
 @media (max-height: 461px) {
   .calendar-container {
     height: 95px;
     .calendar-number {
       height: 61px;
       font-size: 40px;
+    }
+  }
+}
+
+@media (max-height: 339px) {
+  .countdown-title {
+    display: none;
+  }
+  .calendar-container {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    .binds {
+      background: #fff;
+    }
+    .calendar-top {
+      background: transparent;
+      border-bottom: 2px solid #fff;
     }
   }
 }
