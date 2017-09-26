@@ -307,7 +307,8 @@ hr {
   display: flex;
   flex-direction: column;
   border: 2px solid white;
-  border-radius: 5px; }
+  border-radius: 5px;
+  background: #67d4f9; }
   .weather-today .title {
     font-size: 30px;
     margin: 5px 0px 0px 14px; }

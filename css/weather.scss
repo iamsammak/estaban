@@ -45,6 +45,7 @@ $background-gradient: linear-gradient(to bottom, #AA1003 0%,#B3C44C 100%);
   flex-direction: column;
   border: 2px solid $main-color;
   border-radius: 5px;
+  background: lighten(#36C6F7, 10%);
 
   .title {
     font-size: 30px;
