@@ -1,6 +1,8 @@
 import React from 'react';
 import moment from 'moment';
 
+import Boat from './boat';
+
 import { getDateString } from './countdown-util';
 
 class Countdown extends React.Component {

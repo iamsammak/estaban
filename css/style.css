@@ -47,7 +47,8 @@
     width: 3px;
     background: #999;
     border-radius: 7px;
-    top: -6px; }
+    top: -6px;
+    box-shadow: 0px 1px 1px black; }
   .calendar-container .bind-1 {
     left: 12%; }
   .calendar-container .bind-2 {
