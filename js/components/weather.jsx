@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import moment from 'moment';
 
 import { WOEIDS, DayInWords } from './weather_util';
 
@@ -103,12 +104,19 @@ class Weather extends React.Component {
   }
 
   setCurrentDay() {
+    let momentObj = '';
+    if (this.props.location === "fremont") {
+      momentObj = moment().tz('America/Los_Angeles');
+    } else if (this.props.location === "mishawaka") {
+      momentObj = moment().tz('America/Indiana/Indianapolis');
+    }
+
     let currentDay = "";
-    if (window.innerWidth < 900) {
-      currentDay = DayInWords[new Date().getDay() + 7].toLowerCase();
+    if (window.innerWidth < 1220) {
+      currentDay = DayInWords[momentObj.day() + 7].toLowerCase();
       this.update("currentDay", currentDay);
     } else {
-      currentDay = DayInWords[new Date().getDay()].toLowerCase();
+      currentDay = DayInWords[momentObj.day()].toLowerCase();
       this.update("currentDay", currentDay);
     }
   }
@@ -118,14 +126,21 @@ class Weather extends React.Component {
   }
 
   render() {
+    let momentObj = '';
+    if (this.props.location === "fremont") {
+      momentObj = moment().tz('America/Los_Angeles');
+    } else if (this.props.location === "mishawaka") {
+      momentObj = moment().tz('America/Indiana/Indianapolis');
+    }
+
     let currentDay = "";
-    const mq = window.matchMedia("(max-width: 900px)");
+    const mq = window.matchMedia("(max-width: 1220px)");
     mq.addListener((mq) => {
       if (mq.matches) {
-        currentDay = DayInWords[new Date().getDay() + 7].toLowerCase();
+        currentDay = DayInWords[momentObj.day() + 7].toLowerCase();
         this.update("currentDay", currentDay);
       } else {
-        currentDay = DayInWords[new Date().getDay()].toLowerCase();
+        currentDay = DayInWords[momentObj.day()].toLowerCase();
         this.update("currentDay", currentDay);
       }
     });

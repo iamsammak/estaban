@@ -10,7 +10,7 @@ const Estaban = () => {
       <Clock location="california"/>
       <Weather location="fremont"/>
       <Countdown />
-      <Weather location="mishiwaka"/>
+      <Weather location="mishawaka"/>
       <Clock location="indiana" />
     </div>
   );

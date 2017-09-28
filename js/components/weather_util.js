@@ -1,6 +1,6 @@
 export const WOEIDS = {
   "fremont" : 2407405,
-  "mishiwaka": 2452303,
+  "mishawaka": 2452303,
   "san_francisco": 2487956,
   "los_angeles": 2442047,
   "san_jose": 2488042,
