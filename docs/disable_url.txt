@@ -1,0 +1,17 @@
+https://github.com/webpack-contrib/css-loader/issues/256
+
+background: url();
+handling a file path doesn't work
+
+Solution:
+
+SOLUTION ONE:
+Add ?url=false to your css-loader, that will disable url handling :
+
+e.g: ['css-loader?url=false', 'sass-loader'] ...
+
+SOLUTION TWO:
+You can also try using
+~ before you path to the image
+
+Notably: background-url: (~assets/image/myimage) should resolve the path
