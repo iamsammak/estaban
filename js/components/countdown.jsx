@@ -3,28 +3,53 @@ import moment from 'moment';
 
 import Boat from './boat';
 
-import { getDateString } from './countdown-util';
+import { getDateString, secondsToHours } from './countdown-util';
 
 class Countdown extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       title: "Next Adventure",
+      left: "days",
       number: 69,
-      targetDate: "2017-10-13"
+      targetMoment: "2017-10-13 20:15:00"
     };
-    this.updateDays = this.updateDays.bind(this);
+    // this.updateDays = this.updateDays.bind(this);
+    // no need to bind this because updateDays isn't being called inside render
+    // or rather not outside the scope where this will differ from being Countdown object
   }
 
   componentDidMount() {
     this.updateDays();
+    // this.logDiffs();
   }
 
   updateDays() {
-    let current = moment().format("YYYY-MM-DD");
-    let target = moment(this.state.targetDate);
-    let daysLeft = target.diff(current, "days")
-    this.setState({ number: daysLeft })
+    let current = moment().format("YYYY-MM-DD hh:mm:ss");
+    let target = moment(this.state.targetMoment);
+    let daysLeft = target.diff(current, "days");
+    if (daysLeft == 0) {
+      // let hoursLeft = target.diff(current, "hours");
+      let secondsLeft = target.diff(current, "seconds");
+      let hoursLeft = secondsToHours(secondsLeft);
+
+      this.setState({ left: "hours", number: hoursLeft });
+    } else {
+      this.setState({ left: "days", number: daysLeft })
+    }
+  }
+
+  // for testing
+  logDiffs() {
+    let current = moment().format("YYYY-MM-DD hh:mm:ss");
+    let target = moment(this.state.targetMoment);
+    let hoursLeft = target.diff(current, "hours");
+    let daysLeft = target.diff(current, "days");
+    let secondsLeft = target.diff(current, "seconds");
+
+    console.log("diff in days", daysLeft);
+    console.log("diff in hours", hoursLeft);
+    console.log("diff in seconds", secondsLeft);
   }
 
   render() {
@@ -37,7 +62,7 @@ class Countdown extends React.Component {
           <span className="bind-2 binds"></span>
           <span className="bind-3 binds"></span>
           <span className="bind-4 binds"></span>
-        	<span className="calendar-top">days left</span>
+        	<span className="calendar-top">{this.state.left} left</span>
           <div className="calendar-number">
             <span>{this.state.number}</span>
           </div>
