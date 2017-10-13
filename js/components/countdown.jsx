@@ -26,11 +26,12 @@ class Countdown extends React.Component {
 
   updateDays() {
     let current = moment().format("YYYY-MM-DD hh:mm:ss");
+    let armyTime = moment().format("YYYY-MM-DD HH:mm:ss");
     let target = moment(this.state.targetMoment);
     let daysLeft = target.diff(current, "days");
     if (daysLeft == 0) {
-      // let hoursLeft = target.diff(current, "hours");
-      let secondsLeft = target.diff(current, "seconds");
+      // let hoursLeft = target.diff(armyTime, "hours");
+      let secondsLeft = target.diff(armyTime, "seconds");
       let hoursLeft = secondsToHours(secondsLeft);
 
       this.setState({ left: "hours", number: hoursLeft });
@@ -41,11 +42,14 @@ class Countdown extends React.Component {
 
   // for testing
   logDiffs() {
-    let current = moment().format("YYYY-MM-DD hh:mm:ss");
+    let current = moment().format("YYYY-MM-DD HH:mm:ss");
     let target = moment(this.state.targetMoment);
     let hoursLeft = target.diff(current, "hours");
     let daysLeft = target.diff(current, "days");
     let secondsLeft = target.diff(current, "seconds");
+
+    console.log("current", current);
+    console.log("target", target);
 
     console.log("diff in days", daysLeft);
     console.log("diff in hours", hoursLeft);
