@@ -12,7 +12,7 @@ class Countdown extends React.Component {
       title: "Next Adventure",
       left: "days",
       number: 69,
-      targetMoment: "2017-10-13 20:15:00"
+      targetMoment: "2017-12-14 18:05:00"
     };
     // this.updateDays = this.updateDays.bind(this);
     // no need to bind this because updateDays isn't being called inside render

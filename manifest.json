@@ -3,7 +3,7 @@
 
   "name": "Estaban",
   "description": "A new tab page for the banana couple",
-  "version": "0.0.0.7",
+  "version": "0.0.0.8",
 
   "permissions": [
     "activeTab",
