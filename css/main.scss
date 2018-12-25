@@ -1,7 +1,8 @@
 $beige: #f6f3f1;
 
 * {
-  font-family: "Roboto Mono";
+  // font-family: "Roboto Mono";
+  font-family: "Crete Round";
   margin: 0;
   padding: 0;
 }
@@ -10,13 +11,23 @@ $beige: #f6f3f1;
 .app {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   height: 100vh;
   // background: linear-gradient(to bottom, #FFE5F9 0%,#98C5FF 100%);
   // background: linear-gradient(to bottom, #ffdfba 0%,#bae1ff 100%);
   // background: linear-gradient(to bottom, #97E5FF 0%,#36C6F7 100%);
-  background: #36C6F7;
+  background: #ffe4e1;
   // background-image: url("~/docs/landscape_1920x1080.jpg");
 }
+
+// Greeting
+.greeting {
+  font-size: 10vh;
+  position: fixed;
+  top: 55%;
+  left: 55%;
+}
+
 
 @import 'countdown';
 @import 'clock';
